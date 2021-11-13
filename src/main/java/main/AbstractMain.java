@@ -14,6 +14,7 @@ public abstract class AbstractMain {
             throws IOException {
 
         System.out.println("Please provide the path to a java project folder: ");
+        System.out.println("You should try with : Project_to_Test/design_patterns/");
         String userInput = inputReader.readLine();
         verifyTestProjectPath(inputReader, userInput);
     }

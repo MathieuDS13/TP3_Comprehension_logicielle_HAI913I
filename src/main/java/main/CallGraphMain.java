@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 
 import graphs.CallGraph;
 import graphs.StaticCallGraph;
+import graphs.StaticCouplingGraph;
 import processors.ASTProcessor;
 
 public class CallGraphMain extends AbstractMain {
@@ -43,6 +44,7 @@ public class CallGraphMain extends AbstractMain {
         builder.append("1. Static call graph.");
         builder.append("\n2. Dynamic call graph.");
         builder.append("\n3. Help menu.");
+        builder.append("\n4. JDT Coupling graph");
         builder.append("\n" + QUIT + ". To quit.");
 
         System.out.println(builder);
@@ -62,6 +64,11 @@ public class CallGraphMain extends AbstractMain {
                     break;
 
                 case "3":
+                    return;
+
+                case "4":
+                    StaticCouplingGraph graph = StaticCouplingGraph.createCouplingGraph(TEST_PROJECT_PATH);
+                    graph.log();
                     return;
 
                 case QUIT:

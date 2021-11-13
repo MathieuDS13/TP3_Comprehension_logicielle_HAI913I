@@ -90,8 +90,18 @@ public class Utility {
                 removeStringBuilderTrailingComma(builder);
             }
         }
-
         builder.append(")");
+        return builder.toString();
+    }
+
+    public static String getAnyMethodInvocationDeclaringClass(MethodInvocation invocation) {
+        StringBuilder builder = new StringBuilder();
+        IMethodBinding methodBinding = invocation.resolveMethodBinding();
+
+        if (methodBinding != null) {
+            ITypeBinding typeBinding = methodBinding.getDeclaringClass();
+            builder.append(typeBinding.getQualifiedName());
+        }
         return builder.toString();
     }
 

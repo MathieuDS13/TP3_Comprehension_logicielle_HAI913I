@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 import graphs.CallGraph;
+import graphs.SpoonGraph;
 import graphs.StaticCallGraph;
 import graphs.StaticCouplingGraph;
 import processors.ASTProcessor;
@@ -45,6 +46,7 @@ public class CallGraphMain extends AbstractMain {
         builder.append("\n2. Dynamic call graph.");
         builder.append("\n3. Help menu.");
         builder.append("\n4. JDT Coupling graph");
+        builder.append("\n5. Spoon Coupling graph");
         builder.append("\n" + QUIT + ". To quit.");
 
         System.out.println(builder);
@@ -69,6 +71,11 @@ public class CallGraphMain extends AbstractMain {
                 case "4":
                     StaticCouplingGraph graph = StaticCouplingGraph.createCouplingGraph(TEST_PROJECT_PATH);
                     graph.log();
+                    return;
+
+                case "5":
+                    SpoonGraph spoonGraph = new SpoonGraph(TEST_PROJECT_PATH);
+                    spoonGraph.printCouplageAll();
                     return;
 
                 case QUIT:

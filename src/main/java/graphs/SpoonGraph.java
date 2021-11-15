@@ -17,7 +17,7 @@ public class SpoonGraph {
     public SpoonAPI spoon = new Launcher();
     private List<CtElement> extract;
 
-    SpoonGraph (String source){
+    public SpoonGraph(String source) {
         this.source = source;
         spoon.addInputResource(source);
         spoon.buildModel();

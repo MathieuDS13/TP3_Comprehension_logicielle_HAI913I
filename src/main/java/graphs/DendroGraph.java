@@ -46,7 +46,6 @@ public class DendroGraph {
         if (input.size() == 1) {
             root = input.get(0);
         }
-        //TODO Ici appliquer l'algo de création de couplage pour créer le dendro à partir des classes du couplingGraph
     }
 
     private DendroNode getNewNodeFromClosestNodes(List<DendroNode> nodes) throws IOException {

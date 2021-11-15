@@ -11,6 +11,7 @@ import spoon.reflect.visitor.filter.TypeFilter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class SpoonGraph {
     private String source;
@@ -114,7 +115,6 @@ public class SpoonGraph {
             }
         }
     }
-
 
 
     public static void main(String[] args) {

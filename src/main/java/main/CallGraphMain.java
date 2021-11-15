@@ -4,10 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import graphs.CallGraph;
-import graphs.SpoonGraph;
-import graphs.StaticCallGraph;
-import graphs.StaticCouplingGraph;
+import graphs.*;
 import processors.ASTProcessor;
 
 public class CallGraphMain extends AbstractMain {
@@ -47,6 +44,7 @@ public class CallGraphMain extends AbstractMain {
         builder.append("\n3. Help menu.");
         builder.append("\n4. JDT Coupling graph");
         builder.append("\n5. Spoon Coupling graph");
+        builder.append("\n6. Module Graph");
         builder.append("\n" + QUIT + ". To quit.");
 
         System.out.println(builder);
@@ -78,6 +76,10 @@ public class CallGraphMain extends AbstractMain {
                     spoonGraph.printCouplageAll();
                     return;
 
+                case "6":
+                    DendroGraph dendroGraph = new DendroGraph(TEST_PROJECT_PATH);
+                    dendroGraph.log();
+                    return;
                 case QUIT:
                     System.out.println("Bye...");
                     return;

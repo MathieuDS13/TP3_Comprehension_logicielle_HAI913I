@@ -150,5 +150,23 @@ public class CouplingGraph extends ASTProcessor {
         return classes.size();
     }
 
+    public double getCoupling(String firstClass, String secondClass) {
+        //Si les classes n'existent pas dans le graph
+        if (!classes.contains(firstClass) && !classes.contains(secondClass)) return 0;
+
+        //Sinon :
+        int callsFromFirstToSec = 0;
+        int callsFromSecToFirst = 0;
+
+        if (classCalls.containsKey(firstClass)) {
+            callsFromFirstToSec = classCalls.get(firstClass).getOrDefault(secondClass, 0);
+        }
+        if (classCalls.containsKey(secondClass)) {
+            callsFromSecToFirst = classCalls.get(secondClass).getOrDefault(firstClass, 0);
+        }
+
+        int sumOfCalls = callsFromFirstToSec + callsFromSecToFirst;
+        return (double) sumOfCalls / (double) getNumberOfCalls();
+    }
 
 }

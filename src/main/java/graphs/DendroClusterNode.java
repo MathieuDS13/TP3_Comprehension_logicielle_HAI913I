@@ -27,8 +27,9 @@ public class DendroClusterNode extends DendroNode {
 
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append("\t|\t\t|");
-        builder.append("\n\t" + left.toString() + "\t\t" + right.toString());
+        builder.append(left.toString());
+        builder.append(" | ");
+        builder.append(right.toString());
         return builder.toString();
     }
 

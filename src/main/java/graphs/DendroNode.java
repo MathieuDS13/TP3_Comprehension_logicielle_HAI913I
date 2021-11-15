@@ -19,6 +19,5 @@ public abstract class DendroNode extends DrawableNode {
     public abstract List<DendroLeafNode> getLeaves();
 
     public abstract String toString();
-    //public abstract void appendStringRepresentation(StringBuilder builder);
 
 }

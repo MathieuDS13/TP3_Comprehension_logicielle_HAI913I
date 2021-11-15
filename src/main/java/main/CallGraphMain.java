@@ -44,7 +44,7 @@ public class CallGraphMain extends AbstractMain {
         builder.append("\n3. Help menu.");
         builder.append("\n4. JDT Coupling graph");
         builder.append("\n5. Spoon Coupling graph");
-        builder.append("\n6. Module Graph");
+        builder.append("\n6. Clusters Graph");
         builder.append("\n" + QUIT + ". To quit.");
 
         System.out.println(builder);
@@ -78,7 +78,7 @@ public class CallGraphMain extends AbstractMain {
 
                 case "6":
                     DendroGraph dendroGraph = new DendroGraph(TEST_PROJECT_PATH);
-                    dendroGraph.log();
+                    dendroGraph.print();
                     return;
                 case QUIT:
                     System.out.println("Bye...");
